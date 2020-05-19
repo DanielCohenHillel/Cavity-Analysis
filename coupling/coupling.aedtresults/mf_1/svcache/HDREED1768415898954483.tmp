@@ -1,0 +1,99 @@
+SimValueCacheVersionID=1
+$begin 'SimValueInfos'
+	NextUniqueID=7
+	MoveBackwards=false
+	$begin 'SimValue'
+		ID=0
+		$begin 'SimValueParams'
+			QuantityName='Q(2)'
+			ValueState(90, 15, 1, 1)
+			MatrixSize(0, 0)
+		$end 'SimValueParams'
+	$end 'SimValue'
+	$begin 'SimValue'
+		ID=1
+		$begin 'SimValueParams'
+			QuantityName='Q(1)'
+			ValueState(90, 15, 1, 1)
+			MatrixSize(0, 0)
+		$end 'SimValueParams'
+	$end 'SimValue'
+	$begin 'SimValue'
+		ID=2
+		$begin 'SimValueParams'
+			QuantityName='Mode(1)'
+			ValueState(90, 15, 1, 2)
+			MatrixSize(0, 0)
+		$end 'SimValueParams'
+	$end 'SimValue'
+	$begin 'SimValue'
+		ID=3
+		$begin 'SimValueParams'
+			QuantityName='Mode(2)'
+			ValueState(90, 15, 1, 2)
+			MatrixSize(0, 0)
+		$end 'SimValueParams'
+	$end 'SimValue'
+	$begin 'SimValue'
+		ID=4
+		$begin 'SimValueParams'
+			QuantityName='Mode(3)'
+			ValueState(90, 15, 1, 2)
+			MatrixSize(0, 0)
+		$end 'SimValueParams'
+	$end 'SimValue'
+	$begin 'SimValue'
+		ID=5
+		$begin 'SimValueParams'
+			QuantityName='Mode(4)'
+			ValueState(90, 15, 1, 2)
+			MatrixSize(0, 0)
+		$end 'SimValueParams'
+	$end 'SimValue'
+	$begin 'SimValue'
+		ID=6
+		$begin 'SimValueParams'
+			QuantityName='Mode(5)'
+			ValueState(90, 15, 1, 2)
+			MatrixSize(0, 0)
+		$end 'SimValueParams'
+	$end 'SimValue'
+$end 'SimValueInfos'
+$begin 'SimValueCache'
+	$begin 'DesignMap'
+		DesignID=1
+		$begin 'SolutionMap'
+			$begin 'ContextMap'
+				SolutionID=108
+				$begin 'VersionMap'
+					$begin 'ReportTypeSolnDef'
+						ReportType=2
+						SimValueContext(0, 0, 2, 0, false, false, -1, 1, 0, 1, 1, '', 0, 0)
+					$end 'ReportTypeSolnDef'
+					$begin 'MajorVVMap'
+						VersionID=9454
+						$begin 'MinorVVMap'
+							MajorVariation='$antenna_depth=\'-0.59999999999999998mm\' $antenna_L=\'1.75mm\' $antenna_R=\'0.20000000000000001mm\' $antenna_w=\'0.10000000000000001mm\' $B=\'0.59999999999999998\' $cav_r=\'2.7999999999999998cm\' $chip2_thickness=\'0.42999999999999999mm\' $chip_penetration=\'-0.14999999999999999mm\' $chip_thickness=\'0.10000000000000001mm\' $chip_w=\'2mm\' $coax_L=\'2.3999999999999999cm\' $coax_r=\'2mm\' $jj_L=\'10um\' $jj_w=\'4um\' $lead_L=\'105um\' $lead_w=\'20um\' $Lj=\'8nH\' $outPinLength=\'0.90000000000000002mm\' $pad_L=\'350um\' $pad_w=\'700um\' $pickup_L=\'4cm\' $pickup_r=\'0.80000000000000004cm\' $ro_gap=\'0.5mm\' $ro_L=\'10mm\' $ro_w=\'0.14999999999999999mm\' $roHoleDepth=\'200mil\' $roHoleRadius=\'57.5mil\' $roPinPos=\'9.5mm\' $seam_dist=\'6.5mm\' $taper_L=\'1.5mm\' $taper_w=\'0.55000000000000004mm\' antenna_depth=\'-0.59999999999999998mm\' antenna_L=\'1.75mm\' antenna_r=\'0.20000000000000001mm\' antenna_w=\'0.10000000000000001mm\' B=\'0.59999999999999998\' cav_R=\'2.7999999999999998cm\' chip2_thickness=\'0.42999999999999999mm\' chip_penetration=\'-0.14999999999999999mm\' chip_thickness=\'0.10000000000000001mm\' chip_w=\'2mm\' coax_L=\'2.3999999999999999cm\' coax_r=\'2mm\' jj_L=\'10um\' jj_w=\'4um\' lead_w=\'20um\' leads_L=\'105um\' Lj_1=\'8nH\' outPinLength=\'0.90000000000000002mm\' pad_L=\'350um\' pad_w=\'700um\' pickup_L=\'4cm\' pickup_r=\'0.80000000000000004cm\' ro_gap=\'0.5mm\' ro_L=\'10mm\' ro_w=\'0.14999999999999999mm\' roHoleDepth=\'200mil\' roHoleRadius=\'57.5mil\' roPinPos=\'9.5mm\' seam_dist=\'6.5mm\' taper_l=\'1.5mm\' taper_w=\'0.55000000000000004mm\''
+							MinorCacheFile='min51E517684158990069835.tmp'
+						$end 'MinorVVMap'
+						$begin 'MinorVVMap'
+							MajorVariation='$antenna_depth=\'-0.59999999999999998mm\' $antenna_L=\'1.75mm\' $antenna_R=\'0.20000000000000001mm\' $antenna_w=\'0.10000000000000001mm\' $B=\'0.59999999999999998\' $cav_r=\'2.7999999999999998cm\' $chip2_thickness=\'0.42999999999999999mm\' $chip_penetration=\'-0.14999999999999999mm\' $chip_thickness=\'0.10000000000000001mm\' $chip_w=\'2mm\' $coax_L=\'2.3999999999999999cm\' $coax_r=\'2mm\' $jj_L=\'10um\' $jj_w=\'4um\' $lead_L=\'105um\' $lead_w=\'20um\' $Lj=\'8nH\' $outPinLength=\'0.90000000000000002mm\' $pad_L=\'350um\' $pad_w=\'700um\' $pickup_L=\'4cm\' $pickup_r=\'0.80000000000000004cm\' $ro_gap=\'1mm\' $ro_L=\'10mm\' $ro_w=\'0.14999999999999999mm\' $roHoleDepth=\'200mil\' $roHoleRadius=\'57.5mil\' $roPinPos=\'9.5mm\' $seam_dist=\'6.5mm\' $taper_L=\'1.5mm\' $taper_w=\'0.55000000000000004mm\' antenna_depth=\'-0.59999999999999998mm\' antenna_L=\'1.75mm\' antenna_r=\'0.20000000000000001mm\' antenna_w=\'0.10000000000000001mm\' B=\'0.59999999999999998\' cav_R=\'2.7999999999999998cm\' chip2_thickness=\'0.42999999999999999mm\' chip_penetration=\'-0.14999999999999999mm\' chip_thickness=\'0.10000000000000001mm\' chip_w=\'2mm\' coax_L=\'2.3999999999999999cm\' coax_r=\'2mm\' jj_L=\'10um\' jj_w=\'4um\' lead_w=\'20um\' leads_L=\'105um\' Lj_1=\'8nH\' outPinLength=\'0.90000000000000002mm\' pad_L=\'350um\' pad_w=\'700um\' pickup_L=\'4cm\' pickup_r=\'0.80000000000000004cm\' ro_gap=\'1mm\' ro_L=\'10mm\' ro_w=\'0.14999999999999999mm\' roHoleDepth=\'200mil\' roHoleRadius=\'57.5mil\' roPinPos=\'9.5mm\' seam_dist=\'6.5mm\' taper_l=\'1.5mm\' taper_w=\'0.55000000000000004mm\''
+							MinorCacheFile='min51E517684158990069836.tmp'
+						$end 'MinorVVMap'
+						$begin 'MinorVVMap'
+							MajorVariation='$antenna_depth=\'-0.59999999999999998mm\' $antenna_L=\'1.75mm\' $antenna_R=\'0.20000000000000001mm\' $antenna_w=\'0.10000000000000001mm\' $B=\'0.59999999999999998\' $cav_r=\'2.7999999999999998cm\' $chip2_thickness=\'0.42999999999999999mm\' $chip_penetration=\'-0.14999999999999999mm\' $chip_thickness=\'0.10000000000000001mm\' $chip_w=\'2mm\' $coax_L=\'2.3999999999999999cm\' $coax_r=\'2mm\' $jj_L=\'10um\' $jj_w=\'4um\' $lead_L=\'105um\' $lead_w=\'20um\' $Lj=\'8nH\' $outPinLength=\'0.90000000000000002mm\' $pad_L=\'350um\' $pad_w=\'700um\' $pickup_L=\'4cm\' $pickup_r=\'0.80000000000000004cm\' $ro_gap=\'1.5mm\' $ro_L=\'10mm\' $ro_w=\'0.14999999999999999mm\' $roHoleDepth=\'200mil\' $roHoleRadius=\'57.5mil\' $roPinPos=\'9.5mm\' $seam_dist=\'6.5mm\' $taper_L=\'1.5mm\' $taper_w=\'0.55000000000000004mm\' antenna_depth=\'-0.59999999999999998mm\' antenna_L=\'1.75mm\' antenna_r=\'0.20000000000000001mm\' antenna_w=\'0.10000000000000001mm\' B=\'0.59999999999999998\' cav_R=\'2.7999999999999998cm\' chip2_thickness=\'0.42999999999999999mm\' chip_penetration=\'-0.14999999999999999mm\' chip_thickness=\'0.10000000000000001mm\' chip_w=\'2mm\' coax_L=\'2.3999999999999999cm\' coax_r=\'2mm\' jj_L=\'10um\' jj_w=\'4um\' lead_w=\'20um\' leads_L=\'105um\' Lj_1=\'8nH\' outPinLength=\'0.90000000000000002mm\' pad_L=\'350um\' pad_w=\'700um\' pickup_L=\'4cm\' pickup_r=\'0.80000000000000004cm\' ro_gap=\'1.5mm\' ro_L=\'10mm\' ro_w=\'0.14999999999999999mm\' roHoleDepth=\'200mil\' roHoleRadius=\'57.5mil\' roPinPos=\'9.5mm\' seam_dist=\'6.5mm\' taper_l=\'1.5mm\' taper_w=\'0.55000000000000004mm\''
+							MinorCacheFile='min51E517684158990069837.tmp'
+						$end 'MinorVVMap'
+						$begin 'MinorVVMap'
+							MajorVariation='$antenna_depth=\'-0.59999999999999998mm\' $antenna_L=\'1.75mm\' $antenna_R=\'0.20000000000000001mm\' $antenna_w=\'0.10000000000000001mm\' $B=\'0.59999999999999998\' $cav_r=\'2.7999999999999998cm\' $chip2_thickness=\'0.42999999999999999mm\' $chip_penetration=\'-0.14999999999999999mm\' $chip_thickness=\'0.10000000000000001mm\' $chip_w=\'2mm\' $coax_L=\'2.3999999999999999cm\' $coax_r=\'2mm\' $jj_L=\'10um\' $jj_w=\'4um\' $lead_L=\'105um\' $lead_w=\'20um\' $Lj=\'8nH\' $outPinLength=\'0.90000000000000002mm\' $pad_L=\'350um\' $pad_w=\'700um\' $pickup_L=\'4cm\' $pickup_r=\'0.80000000000000004cm\' $ro_gap=\'2mm\' $ro_L=\'10mm\' $ro_w=\'0.14999999999999999mm\' $roHoleDepth=\'200mil\' $roHoleRadius=\'57.5mil\' $roPinPos=\'9.5mm\' $seam_dist=\'6.5mm\' $taper_L=\'1.5mm\' $taper_w=\'0.55000000000000004mm\' antenna_depth=\'-0.59999999999999998mm\' antenna_L=\'1.75mm\' antenna_r=\'0.20000000000000001mm\' antenna_w=\'0.10000000000000001mm\' B=\'0.59999999999999998\' cav_R=\'2.7999999999999998cm\' chip2_thickness=\'0.42999999999999999mm\' chip_penetration=\'-0.14999999999999999mm\' chip_thickness=\'0.10000000000000001mm\' chip_w=\'2mm\' coax_L=\'2.3999999999999999cm\' coax_r=\'2mm\' jj_L=\'10um\' jj_w=\'4um\' lead_w=\'20um\' leads_L=\'105um\' Lj_1=\'8nH\' outPinLength=\'0.90000000000000002mm\' pad_L=\'350um\' pad_w=\'700um\' pickup_L=\'4cm\' pickup_r=\'0.80000000000000004cm\' ro_gap=\'2mm\' ro_L=\'10mm\' ro_w=\'0.14999999999999999mm\' roHoleDepth=\'200mil\' roHoleRadius=\'57.5mil\' roPinPos=\'9.5mm\' seam_dist=\'6.5mm\' taper_l=\'1.5mm\' taper_w=\'0.55000000000000004mm\''
+							MinorCacheFile='min51E517684158990069838.tmp'
+						$end 'MinorVVMap'
+					$end 'MajorVVMap'
+				$end 'VersionMap'
+			$end 'ContextMap'
+			$begin 'ContextMap'
+				SolutionID=109
+			$end 'ContextMap'
+		$end 'SolutionMap'
+	$end 'DesignMap'
+$end 'SimValueCache'
