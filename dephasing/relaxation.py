@@ -23,7 +23,7 @@ N = 5              # number of cavity fock states
 n_th_a = 0.08e1    # avg number of atom bath excitation
 n_th_c = 0.01      # avg number of cavity bath excitation
 
-tlist = np.linspace(0, 2, 10000)
+tlist = np.linspace(0, 150/chi, 10000)  # MUST: max(tlist) >> 1/chi
 
 # intial state
 cav0 = (qt.basis(N, 1) + qt.basis(N, 0))/np.sqrt(2)
@@ -55,9 +55,9 @@ def proj(state):
         qt.tensor(qt.qeye(N), qt.basis(2, 0)*qt.basis(2, 1).dag()) * \
         state * qt.tensor(qt.qeye(N), qt.basis(2, 1)*qt.basis(2, 0).dag())
 
-
+t_max = 30*np.argmax(-abs(tlist-1/chi))
 life_time = []
-meas_range = list(range(1, len(tlist), 100))
+meas_range = list(range(2, t_max, 5))
 for meas_num in meas_range:
     states = [psi0]
     t = 0
@@ -77,19 +77,29 @@ for meas_num in meas_range:
     popt, pcov = curve_fit(sinexp, tlist, n, maxfev=100000000,
                            bounds=([0, 0, 0, -0.1, -1], [10, 5, 1.2, 1.1, 1]), p0=[g, gamma, 1, 0, 0.5])
 
-    print(f'{meas_num}/{meas_range[-1]} --> {popt[1]:.4e}', end='\r')
-    # if meas_num % 30 != 0:
-    #     plt.figure()
-    #     plt.plot(tlist, n)
-    #     fit = sinexp(tlist, *popt)
-    #     plt.plot(tlist, fit)
-    #     plt.plot(tlist, popt[2]*(2+popt[4])*np.exp(-tlist*popt[1])+popt[3])
+    print(f'{100*meas_num/meas_range[-1]:.2f}% --> {popt[1]:.4e}', end='\r')
     life_time.append(popt[1])
-plt.figure(figsize=(20,10))
-plt.plot(np.array(meas_range)*tlist[-1]/meas_range[-1], life_time)
+    # if meas_num % 6 != 0:
+    # plt.figure()
+    # plt.plot(tlist, n)
+    # fit = sinexp(tlist, *popt)
+    # plt.plot(tlist, fit)
+    # plt.plot(tlist, popt[2]*(2+popt[4])*np.exp(-tlist*popt[1])+popt[3])
+fig, (ax1, ax2) = plt.subplots(2, figsize=(30,20))
+ax1.set_title('Dephasing rate vs $dt$ (measure spacing)')
+ax1.set_xlabel(r'dt [us]')
+ax1.set_ylabel('Dephasing rate')
+ax1.plot(np.linspace(tlist[0], tlist[t_max], len(life_time)), life_time, label='Decay rate')
 # plt.axvline(chi, color='black')
-plt.axvline(1/chi, color='black')
+ax1.axvline(1/chi, color='black', label=r'$\frac{1}{\chi}$')
+ax1.legend()
 
-plt.figure(figsize=(20,10))
-plt.plot(np.array(meas_range)*tlist[-1]/meas_range[-1], 1/np.array(life_time))
+ax2.set_title(r'Dephasing time ($\frac{1}{r}$) vs $dt$ (measure spacing)')
+ax2.set_xlabel(r'dt [us]')
+ax2.set_ylabel('Dephasing rate')
+ax2.plot(np.linspace(tlist[0], tlist[t_max], len(life_time)), 1/np.array(life_time), label='Life time')
+ax2.axvline(1/chi, color='black', label=r'$\frac{1}{\chi}$')
+ax2.legend()
+
+plt.subplots_adjust(hspace=0.2)
 plt.show()
