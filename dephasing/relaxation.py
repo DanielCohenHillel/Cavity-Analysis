@@ -16,7 +16,7 @@ p = tools.params
 mu = 0.001
 
 life_time = []
-t_max = 10*np.argmax(-abs(p.tlist-1/p.chi))
+t_max = 10*np.argmax(-abs(p.tlist-1/p.chi_e))
 meas_range = list(range(2, t_max, 5))
 for meas_num in meas_range:
     states = [p.psi0]
@@ -55,7 +55,7 @@ ax1.plot(np.linspace(p.tlist[0], p.tlist[t_max], len(
     life_time)), life_time, label='Decay rate')
 # ax1.xlim([0, 15])
 # plt.axvline(chi, color='black')
-ax1.axvline(1/p.chi, color='black', label=r'$\frac{1}{\chi}$')
+ax1.axvline(1/p.chi_e, color='black', label=r'$\frac{1}{\chi_e}$')
 ax1.legend()
 
 ax2.set_title(r'Dephasing time ($\frac{1}{r}$) vs $dt$ (measure spacing)')
@@ -63,7 +63,7 @@ ax2.set_xlabel(r'dt [us]')
 ax2.set_ylabel('Dephasing rate')
 ax2.plot(np.linspace(p.tlist[0], p.tlist[t_max], len(
     life_time)), 1/np.array(life_time), label='Life time')
-ax2.axvline(1/p.chi, color='black', label=r'$\frac{1}{\chi}$')
+ax2.axvline(1/p.chi_e, color='black', label=r'$\frac{1}{\chi_e}$')
 ax2.legend()
 
 plt.subplots_adjust(hspace=0.2)

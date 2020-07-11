@@ -8,7 +8,8 @@ class Params(NamedTuple):
     wa: float
 
     g: float
-    chi: float
+    chi_e: float
+    chi_f: float
     kappa: float
     gamma: float
     N: float
@@ -34,28 +35,34 @@ wc = .1 * 2*np.pi  # cavity frequency
 wa = 0 * 2*np.pi   # atom frequency
 
 g = 0.1 * 2*np.pi  # coupling strength
-chi = 2*np.pi*0.05
+chi_e = 2*np.pi*0.05
+chi_f = 2*np.pi*0.005
 kappa = 1e-6       # cavity dissipation rate
 gamma = 0.004      # atom dissipation rate
 N = 5              # number of cavity fock states
+qub_lvls = 3       # Total number of qubit levels
 n_th_a = 0.02      # avg number of atom bath excitation
 n_th_c = 0.01      # avg number of cavity bath excitation
 
-tlist = np.linspace(0, 200/chi, 10000)  # MUST: max(tlist) >> 1/chi
+tlist = np.linspace(0, 70/chi_e, 1000)  # MUST: max(tlist) >> 1/chi
 
 # intial state
 cav0 = (qt.basis(N, 1) + qt.basis(N, 0))/np.sqrt(2)
-qub0 = qt.basis(2, 0)
+qub0 = qt.basis(qub_lvls, 0)
 psi0 = qt.ket2dm(qt.tensor(cav0, qub0))
-psi_e = qt.ket2dm(qt.tensor(cav0, qt.basis(2, 1)))
+psi_e = qt.ket2dm(qt.tensor(cav0, qt.basis(qub_lvls, 1)))
 
 # operators
-a = qt.tensor(qt.destroy(N), qt.qeye(2))
-sm = qt.tensor(qt.qeye(N), qt.destroy(2))
+a = qt.tensor(qt.destroy(N), qt.qeye(qub_lvls))
+sm = qt.tensor(qt.qeye(N), qt.destroy(qub_lvls))
 
 # Hamiltonian (no RWA) jayness cummings
 # H = wc * a.dag() * a + wa * sm.dag() * sm + g * (a.dag()*sm + a*sm.dag())
-H = wc * a.dag() * a + wa * sm.dag() * sm + chi * a.dag()*a * sm.dag()*sm
+# g = qt.tensor(qt.qeye(N), qt.basis(qub_lvls, 0))
+e = qt.tensor(qt.qeye(N), qt.basis(qub_lvls, 1))
+f = qt.tensor(qt.qeye(N), qt.basis(qub_lvls, 2))
+H = wc * a.dag() * a + wa * sm.dag() * sm + a.dag() * \
+    a*(chi_e*e*e.dag() + chi_f*f*f.dag())
 
 # collapse operators
 c_ops = [
@@ -72,7 +79,8 @@ params = Params(
     wa,
 
     g,
-    chi,
+    chi_e,
+    chi_f,
     kappa,
     gamma,
     N,
@@ -103,8 +111,8 @@ def proj(state, cavity_levels, mu=0, rnd=False):
     mu(float)   - The error rate (0-no errors  1-all errors)
     rnd(bool)   - Weather to use density matrix probabilites for the errors or do them randomly (True=do randomly)
     """
-    g = qt.basis(2, 0)
-    e = qt.basis(2, 1)
+    g = qt.basis(qub_lvls, 0)
+    e = qt.basis(qub_lvls, 1)
     N = qt.qeye(cavity_levels)
     N_gg = qt.tensor(N, g*g.dag())  # |N> X |g><g|
     N_ge = qt.tensor(N, g*e.dag())  # |N> X |g><e|
