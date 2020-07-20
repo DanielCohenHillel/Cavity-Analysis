@@ -130,4 +130,4 @@ def proj(state, cavity_levels, mu=0, rnd=False):
             return N_eg*state*N_ge + N_ee*state*N_ee
 
     # (1-u)*(|g><g| S |g><g|)
-    return (1-mu[0])*(N_gg*state*N_gg + N_ge*state*N_eg + N_gf*state*N_fg) + mu[0]*(N_eg*state*N_ge + N_ee*state*N_ee)
+    return (1-mu[0])*(N_gg*state*N_gg + N_ge*state*N_eg) + mu[0]*(N_eg*state*N_ge + N_ee*state*N_ee)
