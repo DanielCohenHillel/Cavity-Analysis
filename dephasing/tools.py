@@ -123,11 +123,21 @@ def proj(state, cavity_levels, mu=0, rnd=False):
     N_gf = qt.tensor(N, g*f.dag())  # |N> X |g><e|
     N_fg = qt.tensor(N, f*g.dag())  # |N> X |e><g|
 
-    if rnd:
-        if np.random.random() > mu:
-            return N_gg*state*N_gg + N_ge*state*N_eg
-        else:
-            return N_eg*state*N_ge + N_ee*state*N_ee
+    # if rnd:
+    #     if np.random.random() > mu:
+    #         return N_gg*state*N_gg + N_ge*state*N_eg
+    #     else:
+    #         return N_eg*state*N_ge + N_ee*state*N_ee
 
     # (1-u)*(|g><g| S |g><g|)
-    return (1-mu[0])*(N_gg*state*N_gg + N_ge*state*N_eg) + mu[0]*(N_eg*state*N_ge + N_ee*state*N_ee)
+    # return mu[0][0]*(N_gg*state*N_gg + N_ge*state*N_eg)\
+    #      + mu[0][1]*(N_gg*state*N_gg + N_ee*state*N_ee)\
+    #      + mu[1][0]*(N_eg*state*N_ge + N_ee*state*N_ee)\
+    #      + mu[1][1]*(N_gg*state*N_gg + N_ge*state*N_eg)
+    return mu[0] *N_gg*state*N_gg\
+      + (1-mu[0])*N_eg*state*N_ge\
+         + mu[1] *N_ge*state*N_eg\
+      + (1-mu[1])*N_ee*state*N_ee
+    # return ((mu[0][0]+mu[1][1])/2)*(N_gg*state*N_gg + N_ge*state*N_eg)\
+    #      + mu[0][1]*(N_gg*state*N_gg + N_ee*state*N_ee)\
+    #      + mu[1][0]*(N_eg*state*N_ge + N_ee*state*N_ee)\
